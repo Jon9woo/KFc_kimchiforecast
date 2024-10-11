@@ -21,7 +21,7 @@ load_dotenv()
 host = st.secrets["DB_HOST"]
 port = int(st.secrets["DB_PORT"])
 username = st.secrets["DB_USER"]
-password = st.secrets["DB_PASS"]
+password = int(st.secrets["DB_PASS"])
 database = st.secrets["DB_NAME"]
 
 # 날짜에 따라 '순'을 구하는 함수
