@@ -11,11 +11,18 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # .env 파일에서 값을 가져옴
-host = os.getenv('DB_HOST')
-port = int(os.getenv('DB_PORT'))
-username = os.getenv('DB_USER')
-password = os.getenv('DB_PASSWORD')
-database = os.getenv('DB_NAME')
+#host = os.getenv('DB_HOST')
+#port = int(os.getenv('DB_PORT'))
+#username = os.getenv('DB_USER')
+#password = os.getenv('DB_PASSWORD')
+#database = os.getenv('DB_NAME')
+
+# secrets.toml의 값 불러오기
+host = st.secrets["DB_HOST"]
+port = int(st.secrets["DB_PORT"])
+username = st.secrets["DB_USER"]
+password = st.secrets["DB_PASS"]
+database = st.secrets["DB_NAME"]
 
 # 날짜에 따라 '순'을 구하는 함수
 def get_순(purchase_date):
